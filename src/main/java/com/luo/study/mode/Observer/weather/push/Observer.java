@@ -1,4 +1,4 @@
-package com.luo.study.mode.Observer.general;
+package com.luo.study.mode.Observer.weather.push;
 
 /**
  * @author luolingyan
@@ -9,7 +9,7 @@ public interface Observer {
 
     /**
      * 更新的接口
-     * @param subject 传入目标对象，方便获取相应的目标对象的状态
+     * @param content 传入目标对象，方便获取相应的目标对象的状态
      */
-    void update(Subject subject);
+    void update(String content);
 }

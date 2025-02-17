@@ -1,4 +1,4 @@
-package com.luo.study.mode.Observer.weather;
+package com.luo.study.mode.Observer.weather.pull;
 
 import lombok.Builder;
 import lombok.Data;

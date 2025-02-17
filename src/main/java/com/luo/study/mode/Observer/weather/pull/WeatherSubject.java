@@ -1,5 +1,6 @@
-package com.luo.study.mode.Observer.weather;
+package com.luo.study.mode.Observer.weather.pull;
 
+import com.luo.study.mode.Observer.weather.pull.Observer;
 import lombok.Data;
 
 import java.util.ArrayList;

@@ -1,5 +1,8 @@
 package com.luo.study.mode.Observer.weather;
 
+import com.luo.study.mode.Observer.weather.pull.ConcreteObserver;
+import com.luo.study.mode.Observer.weather.pull.ConcreteWeatherSubject;
+
 /**
  * @author luolingyan
  * @description

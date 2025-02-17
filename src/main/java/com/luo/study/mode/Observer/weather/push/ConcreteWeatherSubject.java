@@ -1,4 +1,4 @@
-package com.luo.study.mode.Observer.weather;
+package com.luo.study.mode.Observer.weather.push;
 
 /**
  * @author luolingyan
@@ -17,6 +17,6 @@ public class ConcreteWeatherSubject extends WeatherSubject {
     public void setWeatherContent(String weatherContent) {
         this.weatherContent = weatherContent;
         //内容有了，说明天气更新了，通知所有订阅的人
-        this.notifyObservers();
+        this.notifyObservers(weatherContent);
     }
 }
