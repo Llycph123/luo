@@ -8,6 +8,7 @@ package com.luo.study.mode.Strategy;
 public class Main {
     public static void main(String[] args) throws InstantiationException, IllegalAccessException {
         LoginStrategyManager loginStategyManager = LoginStrategyManager.getInstance();
+        System.out.println(LoginEnum.QQ.name());
         LoginStrategy loginStrategy = loginStategyManager.getLoginStrategy(LoginEnum.QQ.name());
         loginStrategy.verify();
         loginStrategy = loginStategyManager.getLoginStrategy(LoginEnum.Dingding.name());
