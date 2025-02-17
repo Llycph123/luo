@@ -1,0 +1,71 @@
+单例模式
+定义：确保一个类只有一个实例，且提供一个全局的访问点
+避免了对象的重复创建，从而节省了内存资源
+保证了对象全局的唯一性，并且方便对对象的全局访问
+对于需要频繁创建和销毁的对象，使用单例模式提供系统性能
+
+单例模式创建方式
+懒汉式：使用时创建
+定义一个私有的构造函数，防止外部程序通过new创建实例
+定义一个静态的私有成员变量做为连接池的唯一实例
+提供一个全局的访问方法，用于返回该对象唯一实例
+定义一个存放数据库可用连接的队列
+定义一个getConnection方法来获取数据库连接
+定义一个releaseConnection方法来释放数据库连接
+
+饿汉式：系统启动时创建
+
+JDBC数据库连接过程
+1、加载数据库驱动
+2、通过JDBC建立连接
+3、执行sql
+4、关闭连接，释放资源
+
+数据库连接池是怎么实现的
+
+public class JavaConnectionPool {
+    /**
+    *用来存放可用的连接
+    */
+    private Queue<Connection> connectionQueue = new LinkedList<>();
+    public static final String DRIVER = "org.mariadb.jdbc.Driver";
+    public static final String URL = "jdbc:mariadb://localhost:3306/test";
+    public static final String USER = "root";
+    public static final String PASSWORD = "123456";
+
+    //1、构造方法私有化
+    private JavaConnectionPool(){}
+
+    //2、定义一个连接池私有对象属性
+    private static JavaConnectionPool instance = null;
+
+    //3、提供一个全局的访问方法
+    public static JavaConnectionPool getInstance(){
+        if(instance == null){
+            instance = new JavaConnectionPool();
+        }
+        return instance;
+    }
+
+    //获取连接
+    public Connection getConnection(){
+        if(connectionQueue.isEmpty()){
+            return createConnection();
+        }else{
+            return connectionQueue.poll();
+        }
+    }
+
+    private Connection createConnection() throws ClassNotFoundException, SQLException {
+        Class.forName(DRIVER);
+        final Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
+        connectionQueue.offer(connection);
+        return connection;
+    }
+
+    //释放连接
+    public void release(Connection connnection){
+        connectionQueue.offer(connection);
+    }
+}
+还需考虑问题：线程安全问题、最大连接数、空闲回收、连接泄露等（最大空闲时间、最大连接时间、最大等待时间）
