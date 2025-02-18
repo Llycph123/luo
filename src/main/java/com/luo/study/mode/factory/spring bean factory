@@ -1,0 +1,8 @@
+BeanFactory，做为spring基础的IOC容器，是spring的一个bean工厂。如果单从工厂模式的角度思考，它就是用来“生成bean”，然后提供给客户端。
+
+bean的实例化过程如下：
+1、调用bean的默认构造方法，或指定的构造方法，生成bean实例（暂称为instance1）
+2、如果bean的配置文件中注入了bean属性值，则在instance1基础上进行属性注入形成Instance2，这种注入是覆盖性的
+3、如果bean实现了InitializingBean接口，则调用afterPropertiesSet()方法，来改变或操作instance2，得到instance3.
+4、如果bean的配置文件中指定了Init-method="init"属性，则会调用指定的初始化方法，则在instance3的基础上调用
+初始化方法init()，将对象最终初始化为instance4；

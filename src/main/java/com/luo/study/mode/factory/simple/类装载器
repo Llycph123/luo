@@ -1,0 +1,9 @@
+InputStream is = getClass().getClassLoader().getResourceAsStream("helloworld.properties");
+
+getClass()：取得当前对象所属的Class对象
+
+getClassLoader()：取得该Class对象的类装载器
+
+类装载器负责从Java字符文件将字符流读入内存，并构造Class类对象，所以通过它可以得到一个文件的输入流。
+
+装载类的过程非常简单：查找类所在位置，并将找到的Java类的字节码装入内存，生成对应的Class对象。
