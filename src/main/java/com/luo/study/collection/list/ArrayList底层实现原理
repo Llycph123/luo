@@ -1,0 +1,16 @@
+参考链接：https://blog.csdn.net/qq_34989829/article/details/107137189
+
+ArrayList增删改查
+
+ArrayList是基于数组实现的，是一个动态数组，其容量可以自动增长，初始容量是10.
+容量自动增长会带来数据向新数组的重新拷贝，因此，如果可以预见数据量的多少，就可以在构造ArrayList时指定其容量。
+在增加大容量元素前，应用程序也可以使用ensureCapacity操作来增加ArrayList实例的容量，这可以减少递增式再分配的数量。
+
+java的serialization提供了一种持久化对象实例的机制。当持久化对象时，可能有一个特殊的对象数据成员，我们不想用serialization
+机制来保存它。为了在一个特定对象的一个域上关闭serialization，可以在这个域前加上关键字transient。
+
+调整数组容量ensureCapacity
+每当向数组中添加元素时，都要去检查添加后元素的个数是否会超过当前数组的长度，如果超出，数组将会进行扩容，以满足添加数据的要求。
+数组扩容通过一个公开的方法ensureCapacity(int minCapacity)来实现。在实际添加大量元素前，我们也可以使用ensureCapacity来手动增加
+ArrayList实例的容量，以减少递增式再分配的数量。
+
