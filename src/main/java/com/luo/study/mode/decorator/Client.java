@@ -5,7 +5,7 @@ package com.luo.study.mode.decorator;
  * @description
  * @create 2025-02-17 10:27
  */
-public class Main {
+public class Client {
     public static void main(String[] args) {
         Order goodsOrder = new GoodsOrder();
         goodsOrder = new RedPaperDiscount(goodsOrder);

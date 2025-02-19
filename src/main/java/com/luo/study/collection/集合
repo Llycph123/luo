@@ -1,0 +1,4 @@
+ArrayList是java内置的数据集合，用于存储多个数据
+ArrayList是数组替代品，提供了更多的数据操作方法
+ArrayList几乎是每一个项目中必用的类
+

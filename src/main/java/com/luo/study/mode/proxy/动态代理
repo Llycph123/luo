@@ -1,0 +1,23 @@
+动态产生代理，实现对不同类，不同方法的代理
+
+所谓Dynamic Proxy是这样一种Class：
+它是在运行时生成的Class
+该Class需要实现一组Interface
+使用动态代理时，必须实现InvocationHandler接口
+
+JDK动态代理实现步骤
+1、创建一个实现接口InvocationHandler的类，它必须实现invoke方法
+2、创建被代理的类以及接口
+3、调用Proxy的静态方法，创建一个代理类
+new ProxyInstance(ClassLoader loader, Class[] interfaces, InvocationHandler h)
+4、通过代理调用方法
+
+JDK动态代理
+1、只能代理实现了接口的类
+2、没有实现接口的类不能实现JDK的动态代理
+
+CGLIB动态代理
+1、针对类来实现代理的
+2、对指定目标类产生一个子类，通过方法拦截技术拦截所有父类方法的调用
+
+

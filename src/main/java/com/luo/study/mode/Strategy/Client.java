@@ -5,7 +5,7 @@ package com.luo.study.mode.Strategy;
  * @description
  * @create 2025-02-17 10:53
  */
-public class Main {
+public class Client {
     public static void main(String[] args) throws InstantiationException, IllegalAccessException {
         LoginStrategyManager loginStategyManager = LoginStrategyManager.getInstance();
         System.out.println(LoginEnum.QQ.name());
