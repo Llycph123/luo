@@ -21,6 +21,12 @@ There is a class named Class.
 
 使用建议：功能性的类尽量使用动态加载而不使用静态加载
 
+基本的数据类型、void关键字都存在类类型
+
+native：本地方法，java里面有一门技术叫JNI，专门用来做本地方法。
+本地方法用java来声明，用C语言实现，在java里面调用。所以我们不用关心它是如何实现的。
+
+Class类的基本API
 
 
 
