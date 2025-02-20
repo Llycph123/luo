@@ -1,0 +1,10 @@
+Map接口
+Map提供了一种映射关系，其中的元素时以键值对的形式存储的，能够实现根据key快速查找value
+Map中的键值对以Entry类型的对象实例形式存在
+key值不可重复，value值可以
+Map支持泛型
+
+HashMap类
+HashMap是Map的一个重要实现类，也是最常用的，基于哈希表实现
+HashMap中的Entry对象是无序排列的
+key和value值都可以为null，但是一个HashMap只能有一个key值为null的映射（key值不可重复）

@@ -1,0 +1,5 @@
+TreeSet结合了HashSet的快速查找特性和ArrayList/LinkedList的元素顺序保持功能，但通过使用红黑树（一种平衡的二叉搜索树）实现，提供了有序的元素集合。
+
+TreeSet的内部使用TreeMap的实例来存储元素，其中元素做为键，值是一个固定的虚拟对象，从而保证了元素的唯一性
+
+相比于HashSet,TreeSet可能需要更多的内存来存储红黑树结构

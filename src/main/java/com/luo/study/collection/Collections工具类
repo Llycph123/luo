@@ -1,0 +1,4 @@
+Collections工具类是java集合框架中，用来操作集合对象的工具类，也是java集合框架的成员
+
+sort()方法：根据元素的自然顺序，对指定列表按升序进行排序。列表中的所有元素都必须实现Comparable接口。此外，列表中的所有元素都必须是可相互比较的。
+（也就是说，对于列表中的任何e1和e2元素,e1.compareTo(e2)不得抛出ClassCastException）
