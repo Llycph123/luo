@@ -65,7 +65,7 @@ public class Game {
         System.out.println("玩家比分前"+players);
         Collections.sort(players, new PlayerComparator());
         System.out.println("玩家比分后"+players);
-        System.out.println(String.format("---------------玩家%s获胜！---------------", players.get(PLAYER_NUM - 1)));
+        System.out.println(String.format("---------------玩家%s获胜！---------------", players.get(0)));
     }
 
     /**

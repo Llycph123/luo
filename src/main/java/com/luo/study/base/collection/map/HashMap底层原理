@@ -1,0 +1,37 @@
+Map接口
+Map提供了一种映射关系，其中的元素时以键值对的形式存储的，能够实现根据key快速查找value
+Map中的键值对以Entry类型的对象实例形式存在
+key值不可重复，value值可以
+Map支持泛型
+
+HashMap类
+HashMap是Map的一个重要实现类，也是最常用的，基于哈希表实现
+HashMap中的Entry对象是无序排列的
+key和value值都可以为null，但是一个HashMap只能有一个key值为null的映射（key值不可重复）
+
+学习HashMap的构造方法、合适的遍历、复制转换等
+学习HashMap必须要知道的底层原理
+TreeMap、LinkedHashMap比HashMap更好吗
+看图说话，对比各Map类的速度
+
+{}输出是集合
+[]输出是数组
+
+HashMap是无序的，即遍历输出的顺序与put存进去的顺序无关
+肯定不是随机输出的，那是按照什么规律输出的呢？
+
+HashMap底层原理
+了解HashMap底层原理是每个java工程师的必修课，它可以帮助我们更好的进行HashMap的优化设计，也是与行业内同事沟通交流的话题，面试的频率也比较高。
+key转换成HashCode，再对HashCode进行取余操作来决定元素在数组上的存储位置，如果产生了碰撞，再根据next决定存储位置
+
+Map中的两个关键方法
+
+1、final int hash(Object k)
+用hashCode()方法将key转换成hash码后并进行优化得到优化后的hash码
+例如，将"yuwen"这个字符串优化后的hash码是115347492
+
+2、static int indexFor(int h, int length)
+对优化后的hash码进行取址，确定在HashMap的位置。例如：115347492在长度是16的HashMap中，取址的坐标是4
+
+
+

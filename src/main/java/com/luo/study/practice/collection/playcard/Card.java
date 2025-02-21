@@ -20,11 +20,12 @@ public class Card implements Comparable<Card> {
         return designColor+number;
     }
 
+    //降序
     @Override
     public int compareTo(Card o) {
-        int result = this.getNumber().compareTo(o.getNumber());
+        int result = o.getNumber().compareTo(this.getNumber());
         if(result == 0){
-            return this.getDesignColor().compareTo(o.getDesignColor());
+            return o.getDesignColor().compareTo(this.getDesignColor());
         }
         return result;
     }

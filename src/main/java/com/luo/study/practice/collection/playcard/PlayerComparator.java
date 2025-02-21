@@ -16,8 +16,8 @@ public class PlayerComparator implements Comparator<Player> {
         List<Card> cards2 = o2.getCards();
         Collections.sort(cards1);
         Collections.sort(cards2);
-        Card maxCard1 = cards1.get(Game.PLAYER_CARD_NUM -1);
-        Card maxCard2 = cards2.get(Game.PLAYER_CARD_NUM -1);
+        Card maxCard1 = cards1.get(0);
+        Card maxCard2 = cards2.get(0);
         System.out.println(String.format("玩家%s的最大点数牌为：%s", o1.getName(), maxCard1.getDesignColor()+maxCard1.getNumber()));
         System.out.println(String.format("玩家%s的最大点数牌为：%s", o2.getName(), maxCard2.getDesignColor()+maxCard2.getNumber()));
         return maxCard1.compareTo(maxCard2);
